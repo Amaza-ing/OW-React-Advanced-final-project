@@ -1,11 +1,17 @@
-import './App.css'
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import UsersPage from "./pages/UsersPage";
 
 function App() {
   return (
     <>
-      <h2>Final Project</h2>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/users" element={<UsersPage />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
