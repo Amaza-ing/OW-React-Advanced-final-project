@@ -33,7 +33,7 @@ function UsersPage() {
     <>
       <HeaderComponent></HeaderComponent>
       <section id="users-page">
-        <h2>Users</h2>
+        <h2 data-testid="users-title">Users</h2>
         <button onClick={addUser}>Añadir Usuario</button>
         <ul className="user-list">{userCards}</ul>
       </section>
