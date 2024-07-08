@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import { UserProviderWrapper } from "./context/user.context.jsx";
+import { RecoilRoot } from "recoil";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserProviderWrapper>
+      <RecoilRoot>
         <App />
-      </UserProviderWrapper>
+      </RecoilRoot>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,13 +1,29 @@
-import { useContext } from "react";
 import HeaderComponent from "../components/HeaderComponent";
-import { UserContext } from "../context/user.context";
 import "./UsersPage.css";
 import UserCard from "../components/UserCard";
+import { useRecoilState } from "recoil";
+import { userListState } from "../atoms/UserListState";
 
 function UsersPage() {
-  const { users, addUser } = useContext(UserContext);
+  const [userList, setUserList] = useRecoilState(userListState);
 
-  const userCards = users.map((user) => (
+  const addUser = async () => {
+    const response = await fetch("https://randomuser.me/api/");
+    const data = await response.json();
+    const userData = data.results[0];
+
+    const newUser = {
+      id: userData.login.uuid,
+      name: userData.name.first,
+      lastName: userData.name.last,
+      email: userData.email,
+      img: userData.picture.large,
+    };
+
+    setUserList((prev) => [...prev, newUser]);
+  };
+
+  const userCards = userList.map((user) => (
     <li key={user.id}>
       <UserCard user={user}></UserCard>
     </li>

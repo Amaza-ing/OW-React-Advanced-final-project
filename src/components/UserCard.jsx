@@ -1,9 +1,15 @@
 import "./UserCard.css";
 import React, { useContext } from "react";
-import { UserContext } from "../context/user.context";
+import { useRecoilState } from "recoil";
+import { userListState } from "../atoms/UserListState";
 
 function UserCard({ user }) {
-  const { deleteUser } = useContext(UserContext);
+  const [userList, setUserList] = useRecoilState(userListState);
+
+  const deleteUser = (userId) => {
+    const remainingUsers = userList.filter((user) => user.id !== userId);
+    setUserList(remainingUsers);
+  };
 
   return (
     <article className="user-card">
