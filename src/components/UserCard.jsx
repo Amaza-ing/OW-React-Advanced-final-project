@@ -1,5 +1,5 @@
 import "./UserCard.css";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../context/user.context";
 
 function UserCard({ user }) {
@@ -17,4 +17,4 @@ function UserCard({ user }) {
   );
 }
 
-export default UserCard;
+export default React.memo(UserCard);
