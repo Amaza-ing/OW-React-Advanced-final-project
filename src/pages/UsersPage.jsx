@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import HeaderComponent from "../components/HeaderComponent";
 import { UserContext } from "../context/user.context";
+import "./UsersPage.css";
 import UserCard from "../components/UserCard";
 
 function UsersPage() {

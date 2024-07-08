@@ -1,0 +1,13 @@
+#users-page {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .user-list {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
