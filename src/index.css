@@ -1,0 +1,24 @@
+body {
+  margin: 0 50px;
+  padding: 0;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+  a {
+    color: blueviolet;
+  }
+
+  pre {
+    padding: 10px 20px;
+    background-color: lightgray;
+    color: rgb(27, 27, 27);
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 0 50px;
+    flex-wrap: wrap;
+  }
+}
